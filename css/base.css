@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+::selection {
+  background-color: #0dd;
+  color: #099;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  overflow: hidden;
+  font-family: 'Architects Daughter', cursive;    
+  font-size: 1.5vmin;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #0b9ed4;  
+  background-image: linear-gradient( #5ad3ff, #0b96d4 );
+  background-attachment: fixed;
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+main {
+  position: relative;
+  top: 100%;
+  color: #eee;
+  z-index: 10;
+}
+.bird_wrapper {
+  position: absolute;
+  right: 0;
+  width: 15rem;
+  height: 10rem;
+}
+.bird {
+  position: relative;
+  left: 0rem;
+  width: 15rem;
+  height: 10rem;
+/*  background-color: #222;*/
+}
+.head {
+  position: absolute;
+  z-index: 5;
+  top: -4.49rem;
+  width: 5rem;
+  height: 4.5rem;
+  background-color: #0566d6;
+  border-radius: 5rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.eye {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 2rem;
+  left: 1rem;
+  width: 1rem;
+  height: 1rem;
+  background-color: #eee;
+  border-radius: 1rem;
+}
+.pupil {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #222;
+  border-radius: 1rem;  
+}
+.beak {
+  position: absolute;
+  z-index: 2;
+  left: -1.64rem;
+  top: 2.5rem;
+  transform: rotate( 90deg );
+  width: 0;
+  height: 0;
+  border-left: 0.75rem solid transparent;
+  border-right: 0.75rem solid transparent;
+  border-top: 1.75rem solid hsl(44, 80%, 50%);  
+}
+.body {
+  position: relative;
+  z-index: 10;
+  top: 4.75rem;
+  left: 2rem;
+  width: 10rem;
+  height: 5rem;
+  background-color: #d3f2ff;
+  border-radius: 5rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;  
+}
+.wing {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  top: -0.25rem;
+  left: 2rem;
+  transform-origin: 0% 0%;
+  width: 8.5rem;
+  height: 4.5rem;
+  background-color: #0566d6;
+  border-radius: 10rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;    
+}
+.inside_wing {
+  position: relative;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 7.5rem;
+  height: 4rem;
+  background-color: #0076ff;
+  border-radius: 10rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;    
+}
+.tail {
+  position: absolute;
+  z-index: 2;
+  top: -3rem;
+  right: -1rem;
+  transform: rotate( 45deg );
+  transform-origin: 50% 100%;
+  width: 0;
+  height: 0;
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+  border-top: 3rem solid #0076ff;
+}
+.flap {
+  animation-name: flap;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+.wiggle {
+  animation-name: wiggle;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;  
+}
+.bounce {
+  animation-name: bounce;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;  
+}
+.fly_left {
+  animation-name: fly_left;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;  
+  animation-timing-function: cubic-bezier(.65,1.12,.49,-0.02);
+}
+.high {
+  animation-name: high;
+  animation-duration: 45s;
+  animation-iteration-count: infinite;    
+}
+@keyframes flap {
+  0% {
+    transform: rotate( 5deg );
+  }
+  50% {
+    transform: rotate( -25deg );    
+  }
+  100% {
+    transform: rotate( 5deg );    
+  }
+}
+@keyframes wiggle {
+  0% {
+    transform: rotate( 40deg );
+  }
+  50% {
+    transform: rotate( 45deg );    
+  }
+  100% {
+    transform: rotate( 40deg );    
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateY( 2rem ) rotate( 0deg );
+  }
+  50% {
+    transform: translateY( 0rem ) rotate( 2.5deg );   
+  }
+  100% {
+    transform: translateY( 2rem ) rotate( 0deg );   
+  }
+}
+@keyframes fly_left {
+  0% {
+    right: -0%;
+    transform: translateY( 2rem ) rotate( 0deg );
+  }
+  50% {
+    transform: translateY( 0rem ) rotate( 2.5deg ); 
+  }
+  100% {
+    right: 100%;
+    transform: translateY( 2rem ) rotate( 0deg );   
+  }
+}
+@keyframes high {
+  0% {
+    top: 101%;
+    transform: rotate( 0deg ) scale( 1 );
+  }
+  100% {
+    top: -05%;
+    transform: rotate( 5deg ) scale( 1.75 );   
+  }  
+}
+footer {
+  overflow-y: auto;
+  padding: 5rem;
+  font-size: 2rem;
+  position: absolute;
+  top: 10rem;
+  bottom: 10rem;
+  left: 10rem;
+  right: 10rem;
+  background-color: rgba( 250, 250, 250, 0.5 );
+  color: #444;
+  z-index: 10;
+  backdrop-filter: blur( 1rem );
+  border-radius: 2rem;
+}
+h2 {
+  color: #1f2376;
+}
+h2 span {
+  color: #ba5885;
+  font-weight: bold;
+  font-size: 3.5rem;
+}
+p {
+  font-size: 1.75rem;
+}
+p span {
+  font-size: 1.25rem;
+  color:#129191;
+}
+b {
+  font-size: 2rem;
+}
+small {
+  color: #00b1ff;
+  font-size: 1.25rem;
+}
+.fadein {
+  animation-name: fadein;
+  animation-duration: 1s;
+}
+@keyframes fadein {
+  0% {
+    z-index; 10;
+  }
+  100% {
+    z-index: 0;
+  }  
+}
