@@ -231,6 +231,7 @@ footer {
   color: #444;
   z-index: 10;
   backdrop-filter: blur( 1rem );
+  -webkit-backdrop-filter: blur( 1rem );
   border-radius: 2rem;
 }
 h2 {
